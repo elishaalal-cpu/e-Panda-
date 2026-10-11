@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="sw" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Panda | Astrophysical Precision Agriculture & Ag-Fintech</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6.4 for Corporate Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter as fallback / supplementary font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        safaricom: {
+                            green: '#00A859',
+                            darkgreen: '#006837',
+                            lightgreen: '#E6F6EC',
+                            blue: '#00A3E0',
+                            darkblue: '#0077B6',
+                            navy: '#0B1E14',
+                            offwhite: '#F4F7F5',
+                            gold: '#F5A623',
+                            slate: '#1E293B',
+                            grayborder: '#E2E8F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Futura', 'Trebuchet MS', 'Inter', 'sans-serif'],
+                        mono: ['Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Futura', 'Trebuchet MS', 'Inter', sans-serif;
+            background-color: #F4F7F5;
+            color: #1E293B;
+        }
+
+        /* Safaricom Style Corporate Shadows & Cards */
+        .saf-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .saf-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 168, 89, 0.12);
+        }
+
+        .saf-gradient-bg {
+            background: linear-gradient(135deg, #00A859 0%, #006837 100%);
+        }
+
+        .saf-gradient-blue {
+            background: linear-gradient(135deg, #00A3E0 0%, #0077B6 100%);
+        }
+
+        .saf-gradient-dark {
+            background: linear-gradient(135deg, #0B1E14 0%, #153826 100%);
+        }
+
+        /* Classic Retro Feature Phone Display */
+        .phone-body {
+            background: linear-gradient(145deg, #1f2937, #111827);
+            border: 4px solid #374151;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-radius: 28px;
+        }
+
+        .phone-screen {
+            background: #a3b899;
+            color: #0f172a;
+            font-family: 'Courier New', monospace;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+        }
+        
+        .keypad-btn {
+            background: #374151;
+            color: #ffffff;
+            border: 1px solid #4b5563;
+            box-shadow: 0 2px 0 #1f2937;
+            transition: all 0.05s ease;
+        }
+
+        .keypad-btn:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F4F7F5; }
+        ::-webkit-scrollbar-thumb { background: #00A859; border-radius: 4px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-safaricom-green selection:text-white">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-safaricom-grayborder shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center space-x-3">
+                <div class="w-11 h-11 rounded-xl bg-safaricom-green flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-seedling text-2xl"></i>
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-extrabold text-2xl text-safaricom-navy tracking-tight">e-Panda</span>
+                        <span class="text-[10px] bg-safaricom-lightgreen text-safaricom-darkgreen font-bold px-2 py-0.5 rounded-full border border-safaricom-green/30">IAAC 2026</span>
+                    </div>
+                    <p class="text-[11px] text-gray-500 font-semibold" data-i18n="tagline">Astrophysical Ag-Fintech Platform</p>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-bold text-safaricom-slate">
+                <a href="#hero" class="hover:text-safaricom-green transition-colors" data-i18n="nav_home">Nyumbani</a>
+                <a href="#about" class="hover:text-safaricom-green transition-colors" data-i18n="nav_about">Kuhusu e-Panda</a>
+                <a href="#research" class="hover:text-safaricom-green transition-colors" data-i18n="nav_research">Utafiti na Data</a>
+                <a href="#engine" class="hover:text-safaricom-green transition-colors" data-i18n="nav_engine">Live Demo Engine</a>
+                <a href="#register" class="hover:text-safaricom-green transition-colors" data-i18n="nav_register">Sajili Shamba</a>
+                <a href="#fintech" class="hover:text-safaricom-green transition-colors" data-i18n="nav_fintech">Fintech Ledger</a>
+            </nav>
+
+            <!-- Action Controls & Language Switcher -->
+            <div class="flex items-center space-x-3">
+                <!-- Language Toggle Button -->
+                <button onclick="toggleLanguage()" class="flex items-center space-x-2 bg-safaricom-offwhite hover:bg-safaricom-lightgreen text-safaricom-darkgreen px-3 py-2 rounded-lg border border-safaricom-green/30 transition-all font-bold text-xs">
+                    <i class="fa-solid fa-globe text-safaricom-green"></i>
+                    <span id="langBtnText">EN | SW</span>
+                </button>
+
+                <!-- CTA Button -->
+                <a href="#register" class="hidden sm:inline-flex items-center space-x-2 bg-safaricom-green hover:bg-safaricom-darkgreen text-white px-5 py-2.5 rounded-lg font-bold text-xs shadow-md transition-all">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <span data-i18n="btn_nav_cta">Sajili Sasa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative py-16 lg:py-24 bg-gradient-to-b from-safaricom-lightgreen/60 via-safaricom-offwhite to-white overflow-hidden border-b border-safaricom-grayborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white border border-safaricom-green/40 px-3.5 py-1.5 rounded-full shadow-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-safaricom-green animate-pulse"></span>
+                        <span class="text-xs font-bold text-safaricom-darkgreen" data-i18n="hero_badge">Elisha Alal — IAAC 2026 Pre-Finalist & UEFI Founder</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-safaricom-navy leading-tight">
+                        <span class="text-safaricom-green" data-i18n="hero_title_highlight">Hali ya Hewa Sio Bahati Nasibu Tena.</span>
+                        <br>
+                        <span data-i18n="hero_title_main">Ni Sayansi ya Nyota na Jua.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0" data-i18n="hero_subtitle">
+                        Replacing unreliable guesswork with IAAC astrophysics and software-as-a-sensor precision irrigation for 80%+ of East African smallholders without expensive hardware.
+                    </p>
+
+                    <!-- Key Pillars Highlights -->
+                    <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div class="bg-white p-3 rounded-xl border border-safaricom-grayborder shadow-sm">
+                            <div class="text-xs text-gray-500 font-semibold" data-i18n="pill_1_label">Microclimate Gap</div>
+                            <div class="text-lg font-extrabold text-safaricom-navy">&lt; 15%</div>
+                            <div class="text-[10px] text-safaricom-darkgreen font-bold" data-i18n="pill_1_sub">Station Coverage</div>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-safaricom-grayborder shadow-sm">
+                            <div class="text-xs text-gray-500 font-semibold" data-i18n="pill_2_label">Math Accuracy</div>
+                            <div class="text-lg font-extrabold text-safaricom-green">&gt; 92%</div>
+                            <div class="text-[10px] text-safaricom-darkgreen font-bold" data-i18n="pill_2_sub">FAO-56 Calibrated</div>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-safaricom-grayborder shadow-sm">
+                            <div class="text-xs text-gray-500 font-semibold" data-i18n="pill_3_label">Hardware Overhead</div>
+                            <div class="text-lg font-extrabold text-safaricom-blue">$0.00</div>
+                            <div class="text-[10px] text-safaricom-darkblue font-bold" data-i18n="pill_3_sub">Software Sensor</div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#register" class="w-full sm:w-auto px-8 py-4 bg-safaricom-green hover:bg-safaricom-darkgreen text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span data-i18n="btn_hero_register">Sajili Shamba Lako</span>
+                        </a>
+                        <a href="#engine" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-safaricom-offwhite border-2 border-safaricom-green text-safaricom-darkgreen font-bold rounded-xl transition-all flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-calculator text-safaricom-green"></i>
+                            <span data-i18n="btn_hero_demo">Jaribu Mfumo Wetu</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Artwork Column: Kenyan Female Tea Farmer SVG Vector Art -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md bg-white p-4 rounded-3xl border-2 border-safaricom-green/30 shadow-xl">
+                        
+                        <!-- Custom SVG Vector Illustration -->
+                        <svg viewBox="0 0 500 500" class="w-full h-auto rounded-2xl bg-gradient-to-b from-sky-100 via-emerald-50 to-emerald-100">
+                            <!-- Clear Blue Sky & Sun Radiance -->
+                            <circle cx="420" cy="80" r="45" fill="#F5A623" opacity="0.9" />
+                            <circle cx="420" cy="80" r="65" fill="#F5A623" opacity="0.2" />
+                            <circle cx="420" cy="80" r="90" fill="#F5A623" opacity="0.1" />
+
+                            <!-- Orbital Solar Flux Trajectory Lines -->
+                            <path d="M 50 160 Q 250 40 450 160" fill="none" stroke="#00A3E0" stroke-width="2" stroke-dasharray="6,6" opacity="0.7"/>
+                            <path d="M 30 200 Q 250 80 470 200" fill="none" stroke="#00A859" stroke-width="2" stroke-dasharray="4,4" opacity="0.5"/>
+
+                            <!-- Tea Plantation Rolling Hills (Kericho / Thika) -->
+                            <path d="M 0 350 Q 150 280 300 360 T 500 340 L 500 500 L 0 500 Z" fill="#006837" />
+                            <path d="M 0 380 Q 200 320 400 390 T 500 380 L 500 500 L 0 500 Z" fill="#00A859" />
+
+                            <!-- Tea Bushes Foliage -->
+                            <circle cx="80" cy="380" r="35" fill="#153826" />
+                            <circle cx="140" cy="390" r="40" fill="#006837" />
+                            <circle cx="380" cy="400" r="45" fill="#006837" />
+                            <circle cx="440" cy="390" r="35" fill="#153826" />
+
+                            <!-- Woven Tea Basket on Back (Kikapu) -->
+                            <path d="M 170 240 L 230 240 L 220 330 L 180 330 Z" fill="#B45309" stroke="#78350F" stroke-width="3" />
+                            <!-- Basket Texture Lines -->
+                            <line x1="170" y1="260" x2="230" y2="260" stroke="#78350F" stroke-width="2" />
+                            <line x1="175" y1="280" x2="225" y2="280" stroke="#78350F" stroke-width="2" />
+                            <line x1="178" y1="300" x2="222" y2="300" stroke="#78350F" stroke-width="2" />
+                            <!-- Tea Leaves inside Basket -->
+                            <circle cx="185" cy="235" r="12" fill="#22C55E" />
+                            <circle cx="200" cy="230" r="15" fill="#16A34A" />
+                            <circle cx="215" cy="235" r="12" fill="#22C55E" />
+
+                            <!-- Kenyan Female Farmer Silhouette -->
+                            <!-- Head and African Headwrap (Kitenge) -->
+                            <circle cx="250" cy="150" r="28" fill="#451A03" />
+                            <!-- Bright Kitenge Headwrap -->
+                            <path d="M 224 145 C 224 120, 276 120, 276 145 Z" fill="#F5A623" />
+                            <path d="M 230 135 Q 250 125 270 135" stroke="#00A859" stroke-width="3" fill="none" />
+
+                            <!-- Torso & Green Blouse -->
+                            <path d="M 215 230 L 285 230 L 275 175 C 260 170, 240 170, 225 175 Z" fill="#00A859" />
+                            
+                            <!-- Proud Face Expression Details -->
+                            <ellipse cx="258" cy="155" rx="3" ry="5" fill="#1C1917" /> <!-- Eye -->
+                            <path d="M 255 165 Q 260 170 265 165" stroke="#1C1917" stroke-width="2" fill="none" /> <!-- Smile -->
+
+                            <!-- Raised Arm Holding Smartphone -->
+                            <path d="M 275 190 L 310 200 L 320 180" stroke="#451A03" stroke-width="12" stroke-linecap="round" fill="none" />
+                            
+                            <!-- Smartphone Device -->
+                            <rect x="315" y="155" width="28" height="50" rx="4" fill="#0F172A" />
+                            <rect x="318" y="158" width="22" height="44" rx="2" fill="#00A3E0" />
+                            <!-- Solar Data Graph on Phone Screen -->
+                            <polyline points="320,190 325,180 330,185 335,170 338,175" fill="none" stroke="#FFFFFF" stroke-width="2" />
+                            <circle cx="335" cy="170" r="2.5" fill="#F5A623" />
+                        </svg>
+
+                        <!-- Live Status Overlay -->
+                        <div class="mt-3 bg-safaricom-offwhite p-3 rounded-xl border border-safaricom-grayborder flex items-center justify-between text-xs">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-sun text-safaricom-gold animate-spin" style="animation-duration: 15s;"></i>
+                                <span class="font-bold text-safaricom-navy" id="liveHeroSolar">Solar Irradiance: 984 W/m²</span>
+                            </div>
+                            <span class="text-safaricom-darkgreen font-extrabold bg-safaricom-lightgreen px-2 py-0.5 rounded">Thika, Kenya</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ABOUT E-PANDA (FORMERLY ECO-ECLIPSE / E-SPACE FARM) -->
+    <section id="about" class="py-16 bg-white border-b border-safaricom-grayborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-safaricom-darkgreen uppercase tracking-wider bg-safaricom-lightgreen px-3 py-1 rounded-full border border-safaricom-green/30" data-i18n="about_tag">ASILI NA MAGEUZI YETU</span>
+                <h2 class="text-3xl font-extrabold text-safaricom-navy mt-3" data-i18n="about_title">Kutoka Eco-Eclipse Hadi e-Panda Platform</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="about_desc">
+                    Rebranded from Eco-Eclipse / E-Space Farm, e-Panda bridges astronomical orbital mechanics and empirical farm data to empower rural communities across Sub-Saharan Africa.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="saf-card p-6">
+                    <div class="w-12 h-12 rounded-xl bg-safaricom-lightgreen text-safaricom-green flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-safaricom-navy mb-2" data-i18n="p1_title">IAAC Astrophysics Engine</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="p1_desc">
+                        Utilizing orbital eccentricity, angular solar radius calculations ($\theta_S$), and top-of-atmosphere flux ($I_{toa}$) to model microclimates without requiring physical hardware.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="saf-card p-6">
+                    <div class="w-12 h-12 rounded-xl bg-sky-100 text-safaricom-blue flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-safaricom-navy mb-2" data-i18n="p2_title">Software-as-a-Sensor</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="p2_desc">
+                        Eliminating expensive $500+ physical weather station requirements for smallholders by serving calibrated mathematical forecasts through standard USSD and web channels.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="saf-card p-6">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-safaricom-gold flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-safaricom-navy mb-2" data-i18n="p3_title">Climate FinTech Ledger</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="p3_desc">
+                        Connecting verified solar efficiency and water conservation directly to carbon credit payouts, drought micro-insurance, and EU/UAE export QR tokens.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: RESEARCH & EMPIRICAL PROOF -->
+    <section id="research" class="py-16 bg-safaricom-offwhite border-b border-safaricom-grayborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-safaricom-darkblue uppercase tracking-wider bg-sky-100 px-3 py-1 rounded-full border border-safaricom-blue/30" data-i18n="res_tag">DATA NA UTAFITI WA KISAYANSI</span>
+                <h2 class="text-3xl font-extrabold text-safaricom-navy mt-3" data-i18n="res_title">Empirical Evidence & Regional Gap</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="res_desc">
+                    Field data and published agricultural studies confirm the urgent need for software-driven meteorological precision in East Africa.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="saf-card p-6 border-t-4 border-safaricom-green">
+                    <div class="text-3xl font-extrabold text-safaricom-navy font-sans mb-1">84.9%</div>
+                    <div class="text-xs font-bold text-safaricom-darkgreen mb-3" data-i18n="rc1_tag">Kenyan Smallholders</div>
+                    <h4 class="font-bold text-sm text-safaricom-navy mb-2" data-i18n="rc1_title">Indigenous Reliance</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="rc1_desc">
+                        84.9% of Kenyan farmers rely on traditional signs (sunset hues, plant flowering) due to lack of local weather stations.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="saf-card p-6 border-t-4 border-safaricom-blue">
+                    <div class="text-3xl font-extrabold text-safaricom-navy font-sans mb-1">86.0%</div>
+                    <div class="text-xs font-bold text-safaricom-darkblue mb-3" data-i18n="rc2_tag">UDSM Journal Study</div>
+                    <h4 class="font-bold text-sm text-safaricom-navy mb-2" data-i18n="rc2_title">Tanzanian Data</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="rc2_desc">
+                        Tanzanian smallholders in rural sectors depend on memory and optical observation for planting schedules.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="saf-card p-6 border-t-4 border-safaricom-gold">
+                    <div class="text-3xl font-extrabold text-safaricom-navy font-sans mb-1">40.0%</div>
+                    <div class="text-xs font-bold text-amber-700 mb-3" data-i18n="rc3_tag">FAO Water Metric</div>
+                    <h4 class="font-bold text-sm text-safaricom-navy mb-2" data-i18n="rc3_title">Water Wasted</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="rc3_desc">
+                        Up to 40% of irrigation water is lost to evaporation or over-watering under traditional unmonitored pouring.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="saf-card p-6 border-t-4 border-safaricom-darkgreen">
+                    <div class="text-3xl font-extrabold text-safaricom-navy font-sans mb-1">$0.00</div>
+                    <div class="text-xs font-bold text-safaricom-darkgreen mb-3" data-i18n="rc4_tag">e-Panda Innovation</div>
+                    <h4 class="font-bold text-sm text-safaricom-navy mb-2" data-i18n="rc4_title">Hardware Cost</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="rc4_desc">
+                        Software-as-a-Sensor model delivers precise solar flux without installing hardware sensors on the farm.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: LIVE INTERACTIVE ASTROPHYSICAL ENGINE & USSD SIMULATOR -->
+    <section id="engine" class="py-16 bg-white border-b border-safaricom-grayborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-safaricom-darkgreen uppercase tracking-wider bg-safaricom-lightgreen px-3 py-1 rounded-full border border-safaricom-green/30" data-i18n="eng_tag">INJINI YA FIZIKIA NA USSD (*384*#)</span>
+                <h2 class="text-3xl font-extrabold text-safaricom-navy mt-3" data-i18n="eng_title">Live Astrophysical Engine & Calculator</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="eng_desc">
+                    Adjust real-time agricultural variables to compute solar flux ($I_{eff}$), crop evapotranspiration ($ET_c$), exact hydration needs, and test the USSD feature phone interface.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Input Panel -->
+                <div class="lg:col-span-4 saf-card p-6 space-y-5">
+                    <h3 class="font-bold text-base text-safaricom-navy border-b border-safaricom-grayborder pb-3 flex items-center justify-between">
+                        <span data-i18n="eng_inputs_title">Parameta za Shamba</span>
+                        <i class="fa-solid fa-sliders text-safaricom-green"></i>
+                    </h3>
+
+                    <!-- Region / Location Select -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_location">Eneo / Region Location</label>
+                        <select id="calcRegion" onchange="runAstroEngine()" class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-lg p-2.5 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                            <option value="Thika">📍 Thika (Central Kenya - Coffee/Tea)</option>
+                            <option value="Nakuru">📍 Nakuru (Rift Valley - Maize/Vegetables)</option>
+                            <option value="Machakos">📍 Machakos (Eastern - Arid/Drought)</option>
+                            <option value="Kericho">📍 Kericho (Highlands - Tea Plantations)</option>
+                            <option value="Eldoret">📍 Eldoret (Uasin Gishu - Cereals)</option>
+                            <option value="Arusha">📍 Arusha (Tanzania - Mixed Farming)</option>
+                        </select>
+                    </div>
+
+                    <!-- Crop Type -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_crop">Aina ya Zao / Crop Type</label>
+                        <select id="calcCrop" onchange="runAstroEngine()" class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-lg p-2.5 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                            <option value="tea">🍃 Chai / Kenyan Tea (Kc = 1.00)</option>
+                            <option value="avocado">🥑 Hass Avocado (Kc = 0.85)</option>
+                            <option value="maize">🌽 Mahindi / Maize (Kc = 1.15)</option>
+                            <option value="roses">🌹 Golabi / Dutch Roses (Kc = 1.10)</option>
+                        </select>
+                    </div>
+
+                    <!-- Soil Profile -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="lbl_soil">Udongo / Soil Profile</label>
+                        <select id="calcSoil" onchange="runAstroEngine()" class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-lg p-2.5 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                            <option value="loam">🪴 Udongo wa Timba / Loam Soil (Factor = 1.0)</option>
+                            <option value="sandy">🏖️ Udongo wa Mchanga / Sandy Soil (Factor = 1.15)</option>
+                            <option value="clay">🏺 Udongo wa Udongo / Clay Soil (Factor = 0.85)</option>
+                        </select>
+                    </div>
+
+                    <!-- Mode Toggle -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-2" data-i18n="lbl_mode">Hali ya Uendeshaji / Mode</label>
+                        <div class="grid grid-cols-2 gap-2 p-1 bg-safaricom-offwhite rounded-lg border border-safaricom-grayborder">
+                            <button id="btnModeGrowth" onclick="setMode('GROWTH')" class="py-2 text-xs font-bold rounded-md bg-safaricom-green text-white shadow-sm transition-all" data-i18n="mode_growth">Growth (100%)</button>
+                            <button id="btnModeDrought" onclick="setMode('DROUGHT')" class="py-2 text-xs font-bold rounded-md bg-transparent text-slate-600 hover:text-safaricom-navy transition-all" data-i18n="mode_drought">Drought (60%)</button>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Cover Slider -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1">
+                            <span text-slate-700 data-i18n="lbl_cloud">Mawingu / Cloud Cover</span>
+                            <span id="cloudVal" class="text-safaricom-darkgreen">20%</span>
+                        </div>
+                        <input type="range" id="cloudInput" min="0" max="100" value="20" class="w-full h-2 bg-safaricom-offwhite rounded-lg appearance-none cursor-pointer accent-safaricom-green" oninput="runAstroEngine()">
+                    </div>
+
+                    <!-- Temperature Slider -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1">
+                            <span text-slate-700 data-i18n="lbl_temp">Joto / Temperature</span>
+                            <span id="tempVal" class="text-safaricom-blue">26.5 °C</span>
+                        </div>
+                        <input type="range" id="tempInput" min="12" max="42" value="26.5" step="0.5" class="w-full h-2 bg-safaricom-offwhite rounded-lg appearance-none cursor-pointer accent-safaricom-blue" oninput="runAstroEngine()">
+                    </div>
+                </div>
+
+                <!-- Middle Output Panel -->
+                <div class="lg:col-span-4 space-y-4">
+                    
+                    <!-- Solar Flux Card -->
+                    <div class="saf-card p-5 bg-gradient-to-br from-white to-safaricom-lightgreen/50 border-safaricom-green/40">
+                        <div class="flex items-center justify-between text-safaricom-darkgreen text-xs font-bold mb-1">
+                            <span data-i18n="m_ieff_title">EFFECTIVE SOLAR FLUX (I_eff)</span>
+                            <i class="fa-solid fa-sun text-safaricom-gold"></i>
+                        </div>
+                        <div id="outIeff" class="text-2xl font-extrabold text-safaricom-navy font-sans">984.2 W/m²</div>
+                        <div class="text-[11px] text-slate-500 mt-1" id="outIeffSub">Top-of-Atmosphere: 1,368.4 W/m²</div>
+                    </div>
+
+                    <!-- ET Card -->
+                    <div class="saf-card p-5">
+                        <div class="flex items-center justify-between text-safaricom-darkblue text-xs font-bold mb-1">
+                            <span data-i18n="m_etc_title">CROP EVAPOTRANSPIRATION (ETc)</span>
+                            <i class="fa-solid fa-droplet text-safaricom-blue"></i>
+                        </div>
+                        <div id="outETc" class="text-2xl font-extrabold text-safaricom-navy font-sans">4.82 mm/day</div>
+                        <div class="text-[11px] text-slate-500 mt-1" id="outKcSub">Kc Factor = 1.00 (Kenyan Tea)</div>
+                    </div>
+
+                    <!-- Exact Water Required Card -->
+                    <div class="saf-card p-5 border-l-4 border-safaricom-green">
+                        <div class="text-xs font-bold text-slate-500 uppercase" data-i18n="m_water_title">Maji Yanayohitajika kwa Mmea</div>
+                        <div id="outWaterVolume" class="text-3xl font-extrabold text-safaricom-darkgreen font-sans mt-0.5">4.2 Liters / plant / day</div>
+                        <div class="text-[11px] text-slate-600 mt-1" data-i18n="m_water_sub">Optimized for Root Zone Hydration</div>
+                    </div>
+
+                    <!-- Smallholder Bucket Pouring Duration Card -->
+                    <div class="saf-card p-5 bg-amber-50/60 border-amber-200">
+                        <div class="flex items-center justify-between text-amber-800 text-xs font-bold mb-1">
+                            <span data-i18n="m_bucket_title">MANUAL 20L BUCKET POUR DURATION</span>
+                            <i class="fa-solid fa-bucket text-amber-600"></i>
+                        </div>
+                        <div id="outBucketTime" class="text-2xl font-extrabold text-amber-900 font-sans">14 seconds / plant</div>
+                        <div class="text-[11px] text-amber-800/80 mt-1" data-i18n="m_bucket_sub">Simple Uniform Guidance for Smallholders</div>
+                    </div>
+
+                    <!-- Solenoid Relay Open Time -->
+                    <div class="saf-card p-4 bg-safaricom-offwhite flex items-center justify-between text-xs">
+                        <div>
+                            <div class="font-bold text-safaricom-navy" data-i18n="m_relay_title">ESP32 Drip Relay Open Time</div>
+                            <div id="outRelayTime" class="text-sm font-extrabold text-safaricom-green">18 mins 30 secs</div>
+                        </div>
+                        <i class="fa-solid fa-microchip text-2xl text-safaricom-darkgreen"></i>
+                    </div>
+
+                </div>
+
+                <!-- Right USSD Feature Phone Simulator Panel -->
+                <div class="lg:col-span-4 flex justify-center">
+                    <div class="phone-body w-full max-w-xs p-5 space-y-4">
+                        
+                        <!-- Top Phone Bar -->
+                        <div class="flex justify-between items-center text-[10px] text-slate-300 font-mono">
+                            <span>Safaricom 4G</span>
+                            <i class="fa-solid fa-battery-three-quarters text-safaricom-green"></i>
+                        </div>
+
+                        <!-- LCD Retro Screen Display -->
+                        <div class="phone-screen rounded-xl p-4 h-48 flex flex-col justify-between text-xs font-bold leading-snug">
+                            <div id="ussdScreenText" class="whitespace-pre-line">
+                                CON Jambo! e-Panda Solar Engine (*384*#)
+                                1. Water Requirement Today
+                                2. Change Mode (Growth/Drought)
+                                3. Carbon Credit Balance
+                                4. Drought Insurance Status
+                            </div>
+                            <div class="border-t border-slate-700/30 pt-1 flex justify-between text-[9px] font-mono text-slate-800">
+                                <span>SELECT</span>
+                                <span>CANCEL</span>
+                            </div>
+                        </div>
+
+                        <!-- Phone Keypad Grid -->
+                        <div class="space-y-2">
+                            <div class="grid grid-cols-3 gap-1.5 text-center text-xs">
+                                <button onclick="pressPhoneKey('CALL')" class="keypad-btn text-safaricom-green font-bold py-2 rounded">CALL</button>
+                                <button onclick="pressPhoneKey('CLEAR')" class="keypad-btn text-safaricom-gold font-bold py-2 rounded">CLR</button>
+                                <button onclick="pressPhoneKey('END')" class="keypad-btn text-red-400 font-bold py-2 rounded">END</button>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1.5 font-bold">
+                                <button onclick="pressPhoneKey('1')" class="keypad-btn py-2 rounded text-sm">1</button>
+                                <button onclick="pressPhoneKey('2')" class="keypad-btn py-2 rounded text-sm">2</button>
+                                <button onclick="pressPhoneKey('3')" class="keypad-btn py-2 rounded text-sm">3</button>
+                                <button onclick="pressPhoneKey('4')" class="keypad-btn py-2 rounded text-sm">4</button>
+                                <button onclick="pressPhoneKey('5')" class="keypad-btn py-2 rounded text-sm">5</button>
+                                <button onclick="pressPhoneKey('6')" class="keypad-btn py-2 rounded text-sm">6</button>
+                                <button onclick="pressPhoneKey('7')" class="keypad-btn py-2 rounded text-sm">7</button>
+                                <button onclick="pressPhoneKey('8')" class="keypad-btn py-2 rounded text-sm">8</button>
+                                <button onclick="pressPhoneKey('9')" class="keypad-btn py-2 rounded text-sm">9</button>
+                                <button onclick="pressPhoneKey('*')" class="keypad-btn text-safaricom-gold py-2 rounded text-sm">*</button>
+                                <button onclick="pressPhoneKey('0')" class="keypad-btn py-2 rounded text-sm">0</button>
+                                <button onclick="pressPhoneKey('#')" class="keypad-btn text-safaricom-gold py-2 rounded text-sm">#</button>
+                            </div>
+                        </div>
+
+                        <div class="text-center text-[10px] text-slate-400 font-mono">
+                            Click <span class="text-safaricom-green font-bold">*384*#</span> then CALL to test offline simulation.
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FARM REGISTRATION & ONBOARDING PORTAL -->
+    <section id="register" class="py-16 bg-safaricom-offwhite border-b border-safaricom-grayborder">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold text-safaricom-darkgreen uppercase tracking-wider bg-safaricom-lightgreen px-3 py-1 rounded-full border border-safaricom-green/30" data-i18n="reg_tag">USAJILI WA SHAMBA</span>
+                <h2 class="text-3xl font-extrabold text-safaricom-navy mt-3" data-i18n="reg_title">Register Your Farm with e-Panda</h2>
+                <p class="text-slate-600 text-sm mt-2" data-i18n="reg_desc">
+                    Join over 12,000 smallholders across East Africa receiving daily SMS / USSD precision water alerts.
+                </p>
+            </div>
+
+            <div class="saf-card p-8 bg-white border-2 border-safaricom-green/20">
+                <form id="farmRegisterForm" onsubmit="handleRegistration(event)" class="space-y-6">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="form_name">Jina Buono / Full Name *</label>
+                            <input type="text" id="regName" required placeholder="e.g. Wanjiku Mary" class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-lg p-3 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                        </div>
+
+                        <!-- Mobile Phone Number (+254) -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="form_phone">Namba ya Simu (M-PESA) *</label>
+                            <div class="flex">
+                                <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-safaricom-grayborder bg-slate-100 text-slate-600 font-bold text-xs">+254</span>
+                                <input type="tel" id="regPhone" required placeholder="712345678" pattern="[0-9]{9}" class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-r-lg p-3 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="form_email">Barua Pepe / Email Address</label>
+                            <input type="email" id="regEmail" placeholder="farmer@example.com" class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-lg p-3 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                        </div>
+
+                        <!-- County / Region -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="form_county">Kaunti / County Region *</label>
+                            <select id="regCounty" required class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-lg p-3 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                                <option value="">Select County / Region</option>
+                                <option value="Kiambu">Kiambu / Thika</option>
+                                <option value="Nakuru">Nakuru</option>
+                                <option value="Kericho">Kericho</option>
+                                <option value="Machakos">Machakos</option>
+                                <option value="Uasin Gishu">Uasin Gishu / Eldoret</option>
+                                <option value="Nyeri">Nyeri</option>
+                                <option value="Arusha">Arusha (Tanzania)</option>
+                            </select>
+                        </div>
+
+                        <!-- Primary Crop -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="form_crop">Zao Kuu / Primary Crop *</label>
+                            <select id="regCrop" required class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-lg p-3 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                                <option value="Kenyan Tea">Chai / Kenyan Tea</option>
+                                <option value="Hass Avocado">Hass Avocado</option>
+                                <option value="Coffee">Kahawa / Coffee</option>
+                                <option value="Maize">Mahindi / Maize</option>
+                                <option value="Floriculture">Golabi / Flowers</option>
+                            </select>
+                        </div>
+
+                        <!-- Farm Size in Acres -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="form_acres">Ukubwa wa Shamba (Acres) *</label>
+                            <input type="number" id="regAcres" min="0.25" max="500" step="0.25" value="1.5" required class="w-full bg-safaricom-offwhite border border-safaricom-grayborder rounded-lg p-3 text-xs font-semibold focus:ring-2 focus:ring-safaricom-green focus:outline-none">
+                        </div>
+
+                    </div>
+
+                    <!-- Irrigation Method -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-2" data-i18n="form_irrigation">Njia ya Umwagiliaji / Irrigation Method *</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <label class="flex items-center space-x-2 p-3 rounded-lg border border-safaricom-grayborder bg-safaricom-offwhite cursor-pointer hover:bg-safaricom-lightgreen">
+                                <input type="radio" name="irrigationType" value="Manual Bucket" checked class="accent-safaricom-green">
+                                <span class="text-xs font-bold text-slate-700" data-i18n="method_bucket">Ndoo (20L Bucket)</span>
+                            </label>
+                            <label class="flex items-center space-x-2 p-3 rounded-lg border border-safaricom-grayborder bg-safaricom-offwhite cursor-pointer hover:bg-safaricom-lightgreen">
+                                <input type="radio" name="irrigationType" value="Drip Lines" class="accent-safaricom-green">
+                                <span class="text-xs font-bold text-slate-700" data-i18n="method_drip">Mipira ya Mitilizo (Drip)</span>
+                            </label>
+                            <label class="flex items-center space-x-2 p-3 rounded-lg border border-safaricom-grayborder bg-safaricom-offwhite cursor-pointer hover:bg-safaricom-lightgreen">
+                                <input type="radio" name="irrigationType" value="Sprinkler" class="accent-safaricom-green">
+                                <span class="text-xs font-bold text-slate-700" data-i18n="method_sprinkler">Sprinkler</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 bg-safaricom-green hover:bg-safaricom-darkgreen text-white font-extrabold text-sm rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span data-i18n="btn_form_submit">Kamilisha Usajili wa Shamba</span>
+                    </button>
+
+                </form>
+
+                <!-- Simulated Confirmation Modal / Message Box -->
+                <div id="registrationModal" class="hidden mt-6 p-6 bg-safaricom-lightgreen border-2 border-safaricom-green rounded-2xl space-y-3">
+                    <div class="flex items-center space-x-3 text-safaricom-darkgreen font-extrabold text-base">
+                        <i class="fa-solid fa-circle-check text-2xl text-safaricom-green"></i>
+                        <span id="modalTitle">Hongera! Usajili Umekamilika.</span>
+                    </div>
+                    <p class="text-xs text-slate-700 leading-relaxed" id="modalText">
+                        Ujumbe wa M-PESA na SMS umetumwa kwa namba yako (+254 712345678). Mfumo wa e-Panda umeanza kufuatilia shamba lako la Kiambu.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border border-safaricom-green/30 font-mono text-[11px] text-slate-800" id="modalToken">
+                        Ref Token: #EP-2026-THIKA-9942
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CLIMATE FINTECH & EXPORT VALUE ADD -->
+    <section id="fintech" class="py-16 bg-white border-b border-safaricom-grayborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-safaricom-darkblue uppercase tracking-wider bg-sky-100 px-3 py-1 rounded-full border border-safaricom-blue/30" data-i18n="fin_tag">FINTECH NA BIASHARA YA CARBON</span>
+                <h2 class="text-3xl font-extrabold text-safaricom-navy mt-3" data-i18n="fin_title">Climate Finance & Export Traceability</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="fin_desc">
+                    Converting solar energy flux data into carbon offset revenue, parametric micro-insurance payouts, and EU/UAE export QR verification.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Carbon Credit Card -->
+                <div class="saf-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-safaricom-lightgreen text-safaricom-green flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-safaricom-navy mb-2" data-i18n="fin_card1_title">Carbon Credit Ledger</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4" data-i18n="fin_card1_desc">
+                            Radiation Use Efficiency (RUE) biomass accumulation calculated from solar flux.
+                        </p>
+                    </div>
+                    <div class="bg-safaricom-offwhite p-4 rounded-xl border border-safaricom-grayborder">
+                        <div class="text-xs text-gray-500 font-semibold" data-i18n="fin_card1_label">Sequestered CO₂ Balance</div>
+                        <div class="text-2xl font-extrabold text-safaricom-darkgreen font-sans" id="finCarbonValue">148.6 kg CO₂/acre</div>
+                        <div class="text-[11px] text-safaricom-gold font-bold mt-1" data-i18n="fin_card1_val">Est. Value: KES 2,140</div>
+                    </div>
+                </div>
+
+                <!-- Parametric Micro-Insurance Card -->
+                <div class="saf-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-safaricom-navy mb-2" data-i18n="fin_card2_title">Parametric Insurance</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4" data-i18n="fin_card2_desc">
+                            Automated proof-of-loss issued when extreme solar radiation deficit persists without rain.
+                        </p>
+                    </div>
+                    <div class="bg-safaricom-offwhite p-4 rounded-xl border border-safaricom-grayborder">
+                        <div class="text-xs text-gray-500 font-semibold" data-i18n="fin_card2_label">Solar Stress Index</div>
+                        <div class="text-lg font-extrabold text-safaricom-green font-sans" data-i18n="fin_card2_status">NORMAL (Day 2/10)</div>
+                        <div class="text-[11px] text-slate-500 mt-1" data-i18n="fin_card2_trigger">Trigger: &gt;10 Days Deficit</div>
+                    </div>
+                </div>
+
+                <!-- Verified Solar Efficiency QR Export Token Card -->
+                <div class="saf-card p-6 border-2 border-safaricom-blue/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-sky-100 text-safaricom-blue flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-safaricom-navy mb-2" data-i18n="fin_card3_title">Export QR Traceability</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4" data-i18n="fin_card3_desc">
+                            Minting a "Verified Solar Efficiency" QR token for produce exported to European and UAE markets.
+                        </p>
+                    </div>
+
+                    <!-- Interactive QR Code Visual -->
+                    <div class="bg-safaricom-offwhite p-3 rounded-xl border border-safaricom-grayborder flex items-center space-x-3">
+                        <div class="w-16 h-16 bg-white p-1 rounded-lg border border-slate-300 shrink-0">
+                            <svg viewBox="0 0 24 24" class="w-full h-full text-safaricom-navy fill-current">
+                                <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm8-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm11-2h1v2h-1v-2zm-3 0h2v1h-2v-1zm5 0h2v3h-2v-3zm-2 2h1v3h-1v-3zm-3 2h2v1h-2v-1zm4 0h1v2h-1v-2zm2 0h2v2h-2v-2zm-8 2h2v2h-2v-2zm4 0h1v2h-1v-2zm2 0h3v1h-3v-1z"/>
+                            </svg>
+                        </div>
+                        <div class="text-[10px] font-mono space-y-0.5 text-slate-700">
+                            <div class="font-bold text-safaricom-darkgreen">Token: #EP-2026-THIKA</div>
+                            <div>Water Efficiency: 98.4%</div>
+                            <div class="text-safaricom-blue font-bold">Verified by e-Panda</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & ACADEMIC ROOTS -->
+    <footer class="bg-safaricom-navy text-white py-12 border-t-4 border-safaricom-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b border-slate-800 pb-8">
+                
+                <!-- Founder Bio -->
+                <div class="lg:col-span-7 space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-safaricom-green flex items-center justify-center font-bold text-white">
+                            EA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base text-white">Elisha Ochieng' Alal</h4>
+                            <p class="text-xs text-safaricom-green font-semibold" data-i18n="founder_title">Founder, UEFI Global | IAAC 2026 Pre-Finalist</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed" data-i18n="founder_bio">
+                        Alumnus of M-PESA Foundation Academy, Elisha founded UEFI Global and engineered the e-Panda platform (formerly Eco-Eclipse) to bring astronomical precision and software-driven climate finance to smallholders across Africa.
+                    </p>
+                </div>
+
+                <!-- Footer Quick Nav -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4 text-xs font-semibold text-slate-300">
+                    <div class="space-y-2">
+                        <div class="text-safaricom-green font-bold uppercase tracking-wider" data-i18n="foot_links">Viviungo</div>
+                        <div><a href="#hero" class="hover:text-safaricom-green transition-colors">Nyumbani</a></div>
+                        <div><a href="#about" class="hover:text-safaricom-green transition-colors">Kuhusu e-Panda</a></div>
+                        <div><a href="#research" class="hover:text-safaricom-green transition-colors">Utafiti wa IAAC</a></div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-safaricom-green font-bold uppercase tracking-wider" data-i18n="foot_contact">Mawasiliano</div>
+                        <div>📍 Thika, Kiambu County, Kenya</div>
+                        <div>📞 +254 700 000 000</div>
+                        <div>✉️ info@e-panda.co.ke</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright & Legal -->
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 space-y-2 sm:space-y-0">
+                <div>
+                    © 2026 e-Panda Precision Agriculture Platform. All Rights Reserved.
+                </div>
+                <div class="flex space-x-4">
+                    <span>M-PESA Foundation Academy Roots</span>
+                    <span>•</span>
+                    <span>UEFI Global Venture</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT CORE LOGIC & TRANSLATION ENGINE -->
+    <script>
+        const i18n = {
+            sw: {
+                tagline: "Mfumo wa Kilimo-Fintech cha Astrofizikia",
+                nav_home: "Nyumbani",
+                nav_about: "Kuhusu e-Panda",
+                nav_research: "Utafiti na Data",
+                nav_engine: "Live Demo Engine",
+                nav_register: "Sajili Shamba",
+                nav_fintech: "Fintech Ledger",
+                btn_nav_cta: "Sajili Sasa",
+                hero_badge: "Elisha Alal — IAAC 2026 Pre-Finalist & UEFI Founder",
+                hero_title_highlight: "Hali ya Hewa Sio Bahati Nasibu Tena.",
+                hero_title_main: "Ni Sayansi ya Nyota na Jua.",
+                hero_subtitle: "Kustahimili mabadiliko ya tabianchi kwa kutumia hisabati ya astrofizikia ya IAAC na sensora za programu bila kununua vifaa vya gharama kubwa.",
+                pill_1_label: "Kituo cha Hali ya Hewa",
+                pill_1_sub: "Upatikanaji wa Vituo",
+                pill_2_label: "Usahihi wa Hisabati",
+                pill_2_sub: "Kipimo cha FAO-56",
+                pill_3_label: "Gharama ya Vifaa",
+                pill_3_sub: "Sensora ya Programu",
+                btn_hero_register: "Sajili Shamba Lako",
+                btn_hero_demo: "Jaribu Mfumo Wetu",
+                about_tag: "ASILI NA MAGEUZI YETU",
+                about_title: "Kutoka Eco-Eclipse Hadi e-Panda Platform",
+                about_desc: "Kutokana na mabadiliko kutoka Eco-Eclipse / E-Space Farm, e-Panda inaunganisha fizikia ya anga na data ya mkulima kuwezesha jamii za Afrika.",
+                p1_title: "IAAC Astrophysics Engine",
+                p1_desc: "Kukokotoa umbali wa Jua ($d_S$), nusu-duara ($θ_S$), na mwanga wa jua bila hitaji la sensora za kimwili.",
+                p2_title: "Software-as-a-Sensor",
+                p2_desc: "Kando na kununua vituo vya $500+, wakulima wanapata taarifa sahihi kupitia simu yoyote ya kawaida.",
+                p3_title: "Climate FinTech Ledger",
+                p3_desc: "Kuunganisha ufanisi wa maji na mapato ya carbon, bima ya ukame, na vyeti vya usalama vya QR vya mauzo ya nje.",
+                res_tag: "DATA NA UTAFITI WA KISAYANSI",
+                res_title: "Ushahidi wa Utafiti wa Kanda",
+                res_desc: "Utafiti wa nyanjani na majarida ya kisayansi yanathibitisha haja ya haraka ya hisabati ya usahihi.",
+                rc1_tag: "Wakulima wa Kenya",
+                rc1_title: "Ujuzi wa Kiasili",
+                rc1_desc: "84.9% ya wakulima wanategemea dalili za asili kutokana na ukosefu wa vituo vya hali ya hewa.",
+                rc2_tag: "Utafiti wa UDSM",
+                rc2_title: "Data ya Tanzania",
+                rc2_desc: "Wakulima wadogo nchini Tanzania wanategemea kumbu kumbu za kiasili kupanga msimu wa kupanda.",
+                rc3_tag: "Kipimo cha FAO",
+                rc3_title: "Maji Yanayopotea",
+                rc3_desc: "Zaidi ya 40% ya maji hupotea kwa uvukizi chini ya mifumo ya kiasili isiyo na vipimo.",
+                rc4_tag: "Ubunifu wa e-Panda",
+                rc4_title: "Gharama ya Vifaa",
+                rc4_desc: "Mfumo wa sensora ya programu unaleta usahihi bila kuweka vifaa kwenye shamba.",
+                eng_tag: "INJINI YA FIZIKIA NA USSD (*384*#)",
+                eng_title: "Live Astrophysical Engine & Calculator",
+                eng_desc: "Badilisha parameta za shamba kukokotoa mwanga wa jua ($I_{eff}$), maji yanayohitajika, na jaribu USSD simulation.",
+                eng_inputs_title: "Parameta za Shamba",
+                lbl_location: "Eneo / Region Location",
+                lbl_crop: "Aina ya Zao / Crop Type",
+                lbl_soil: "Udongo / Soil Profile",
+                lbl_mode: "Hali ya Uendeshaji / Mode",
+                mode_growth: "Growth (100%)",
+                mode_drought: "Drought (60%)",
+                lbl_cloud: "Mawingu / Cloud Cover",
+                lbl_temp: "Joto / Temperature",
+                m_ieff_title: "EFFECTIVE SOLAR FLUX (I_eff)",
+                m_etc_title: "CROP EVAPOTRANSPIRATION (ETc)",
+                m_water_title: "Maji Yanayohitajika kwa Mmea",
+                m_water_sub: "Kiwango Halisi cha Udongo",
+                m_bucket_title: "MANUAL 20L BUCKET POUR DURATION",
+                m_bucket_sub: "Mwongozo Rahisi kwa Wakulima",
+                m_relay_title: "ESP32 Drip Relay Open Time",
+                reg_tag: "USAJILI WA SHAMBA",
+                reg_title: "Sajili Shamba Lako na e-Panda",
+                reg_desc: "Jiunge na zaidi ya wakulima 12,000 wanaopokea taarifa za usahihi za SMS / USSD kila siku.",
+                form_name: "Jina Buono / Full Name *",
+                form_phone: "Namba ya Simu (M-PESA) *",
+                form_email: "Barua Pepe / Email Address",
+                form_county: "Kaunti / County Region *",
+                form_crop: "Zao Kuu / Primary Crop *",
+                form_acres: "Ukubwa wa Shamba (Acres) *",
+                form_irrigation: "Njia ya Umwagiliaji / Irrigation Method *",
+                method_bucket: "Ndoo (20L Bucket)",
+                method_drip: "Mipira ya Mitilizo (Drip)",
+                method_sprinkler: "Sprinkler",
+                btn_form_submit: "Kamilisha Usajili wa Shamba",
+                fin_tag: "FINTECH NA BIASHARA YA CARBON",
+                fin_title: "Climate Finance & Export Traceability",
+                fin_desc: "Kugeuza mwanga wa jua kuwa fedha za carbon, bima ya ukame, na vyeti vya usalama vya mauzo ya nje.",
+                fin_card1_title: "Carbon Credit Ledger",
+                fin_card1_desc: "Kukokotoa CO2 iliyohifadhiwa kupitia ufanisi wa mwanga wa jua (RUE).",
+                fin_card1_label: "Sequestered CO₂ Balance",
+                fin_card1_val: "Est. Value: KES 2,140",
+                fin_card2_title: "Parametric Insurance",
+                fin_card2_desc: "Malipo ya bima kiotomatiki wakati jua linapozidi kiwango cha usalama bila mvua.",
+                fin_card2_label: "Solar Stress Index",
+                fin_card2_status: "KAWAIDA (Siku 2/10)",
+                fin_card2_trigger: "Trigger: >10 Days Deficit",
+                fin_card3_title: "Export QR Traceability",
+                fin_card3_desc: "Kutoa cheti cha ufanisi wa maji kwa mazao yanayouzwa Ulaya na Nchi za Kiarabu.",
+                founder_title: "Founder, UEFI Global | IAAC 2026 Pre-Finalist",
+                founder_bio: "Kutoka M-PESA Foundation Academy, Elisha aliumba e-Panda kuleta hisabati ya astrofizikia na fedha za tabianchi kwa wakulima wa Afrika.",
+                foot_links: "Viviungo",
+                foot_contact: "Mawasiliano"
+            },
+            en: {
+                tagline: "Astrophysical Ag-Fintech Platform",
+                nav_home: "Home",
+                nav_about: "About e-Panda",
+                nav_research: "Research & Data",
+                nav_engine: "Live Demo Engine",
+                nav_register: "Register Farm",
+                nav_fintech: "Fintech Ledger",
+                btn_nav_cta: "Register Now",
+                hero_badge: "Elisha Alal — IAAC 2026 Pre-Finalist & UEFI Founder",
+                hero_title_highlight: "Weather Is No Longer a Gamble.",
+                hero_title_main: "It Is Astrophysical Science.",
+                hero_subtitle: "Replacing unreliable guesswork with IAAC astrophysics and software-as-a-sensor precision irrigation for 80%+ of East African smallholders without expensive hardware.",
+                pill_1_label: "Microclimate Gap",
+                pill_1_sub: "Station Coverage",
+                pill_2_label: "Math Accuracy",
+                pill_2_sub: "FAO-56 Calibrated",
+                pill_3_label: "Hardware Overhead",
+                pill_3_sub: "Software Sensor",
+                btn_hero_register: "Register Your Farm",
+                btn_hero_demo: "Try Live Demo",
+                about_tag: "OUR ORIGIN & EVOLUTION",
+                about_title: "From Eco-Eclipse to e-Panda Platform",
+                about_desc: "Rebranded from Eco-Eclipse / E-Space Farm, e-Panda bridges astronomical orbital mechanics and empirical farm data to empower rural communities across Sub-Saharan Africa.",
+                p1_title: "IAAC Astrophysics Engine",
+                p1_desc: "Utilizing orbital eccentricity, angular solar radius calculations, and top-of-atmosphere flux to model microclimates without hardware.",
+                p2_title: "Software-as-a-Sensor",
+                p2_desc: "Eliminating expensive $500+ weather station requirements by serving calibrated mathematical forecasts through standard USSD.",
+                p3_title: "Climate FinTech Ledger",
+                p3_desc: "Connecting verified solar efficiency directly to carbon credit payouts, drought micro-insurance, and EU export QR tokens.",
+                res_tag: "EMPIRICAL EVIDENCE & DATA",
+                res_title: "Regional Evidence & Data Gap",
+                res_desc: "Field data and published agricultural studies confirm the urgent need for software-driven meteorological precision in East Africa.",
+                rc1_tag: "Kenyan Smallholders",
+                rc1_title: "Indigenous Reliance",
+                rc1_desc: "84.9% of Kenyan farmers rely on traditional signs due to lack of local weather stations.",
+                rc2_tag: "UDSM Journal Study",
+                rc2_title: "Tanzanian Survey",
+                rc2_desc: "Tanzanian smallholders depend on traditional memory to schedule seasonal planting dates.",
+                rc3_tag: "FAO Water Metric",
+                rc3_title: "Water Wasted",
+                rc3_desc: "Up to 40% of irrigation water is lost to evaporation under traditional unmonitored pouring.",
+                rc4_tag: "e-Panda Innovation",
+                rc4_title: "Hardware Overhead",
+                rc4_desc: "Software-as-a-Sensor model delivers precise solar flux without installing hardware sensors on the farm.",
+                eng_tag: "PHYSICS ENGINE & USSD (*384*#)",
+                eng_title: "Live Astrophysical Engine & Calculator",
+                eng_desc: "Adjust real-time agricultural variables to compute solar flux, crop evapotranspiration, and test the USSD simulator.",
+                eng_inputs_title: "Farm Inputs",
+                lbl_location: "Region Location",
+                lbl_crop: "Crop Type",
+                lbl_soil: "Soil Profile",
+                lbl_mode: "Operating Mode",
+                mode_growth: "Growth (100%)",
+                mode_drought: "Drought (60%)",
+                lbl_cloud: "Cloud Cover",
+                lbl_temp: "Temperature",
+                m_ieff_title: "EFFECTIVE SOLAR FLUX (I_eff)",
+                m_etc_title: "CROP EVAPOTRANSPIRATION (ETc)",
+                m_water_title: "Water Volume Required",
+                m_water_sub: "Root Zone Hydration Metric",
+                m_bucket_title: "MANUAL 20L BUCKET POUR DURATION",
+                m_bucket_sub: "Simple Uniform Smallholder Guidance",
+                m_relay_title: "ESP32 Drip Relay Open Time",
+                reg_tag: "FARM REGISTRATION",
+                reg_title: "Register Your Farm with e-Panda",
+                reg_desc: "Join over 12,000 smallholders across East Africa receiving daily SMS / USSD precision water alerts.",
+                form_name: "Full Name *",
+                form_phone: "Mobile Phone (M-PESA) *",
+                form_email: "Email Address",
+                form_county: "County Region *",
+                form_crop: "Primary Crop *",
+                form_acres: "Farm Size (Acres) *",
+                form_irrigation: "Irrigation Method *",
+                method_bucket: "20L Bucket",
+                method_drip: "Drip Lines",
+                method_sprinkler: "Sprinkler",
+                btn_form_submit: "Complete Farm Registration",
+                fin_tag: "FINTECH & CARBON LEDGER",
+                fin_title: "Climate Finance & Export Traceability",
+                fin_desc: "Converting solar energy flux data into carbon offset revenue, parametric micro-insurance payouts, and export QR tokens.",
+                fin_card1_title: "Carbon Credit Ledger",
+                fin_card1_desc: "Radiation Use Efficiency (RUE) biomass accumulation calculated from solar flux.",
+                fin_card1_label: "Sequestered CO₂ Balance",
+                fin_card1_val: "Est. Value: KES 2,140",
+                fin_card2_title: "Parametric Insurance",
+                fin_card2_desc: "Automated proof-of-loss issued when extreme solar radiation deficit persists without rain.",
+                fin_card2_label: "Solar Stress Index",
+                fin_card2_status: "NORMAL (Day 2/10)",
+                fin_card2_trigger: "Trigger: >10 Days Deficit",
+                fin_card3_title: "Export QR Traceability",
+                fin_card3_desc: "Minting a Verified Solar Efficiency QR token for produce exported to European and UAE markets.",
+                founder_title: "Founder, UEFI Global | IAAC 2026 Pre-Finalist",
+                founder_bio: "Alumnus of M-PESA Foundation Academy, Elisha engineered e-Panda to bring astronomical precision and software-driven climate finance to African smallholders.",
+                foot_links: "Quick Links",
+                foot_contact: "Contact"
+            }
+        };
+
+        let currentLang = 'sw';
+        let currentMode = 'GROWTH';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'sw' ? 'en' : 'sw';
+            document.getElementById('langBtnText').innerText = currentLang === 'sw' ? 'EN | SW' : 'SW | EN';
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[currentLang] && i18n[currentLang][key]) {
+                    el.innerText = i18n[currentLang][key];
+                }
+            });
+
+            // Refresh calculation readouts
+            runAstroEngine();
+        }
+
+        function setMode(mode) {
+            currentMode = mode;
+            const btnG = document.getElementById('btnModeGrowth');
+            const btnD = document.getElementById('btnModeDrought');
+
+            if (mode === 'GROWTH') {
+                btnG.className = "py-2 text-xs font-bold rounded-md bg-safaricom-green text-white shadow-sm transition-all";
+                btnD.className = "py-2 text-xs font-bold rounded-md bg-transparent text-slate-600 hover:text-safaricom-navy transition-all";
+            } else {
+                btnD.className = "py-2 text-xs font-bold rounded-md bg-amber-600 text-white shadow-sm transition-all";
+                btnG.className = "py-2 text-xs font-bold rounded-md bg-transparent text-slate-600 hover:text-safaricom-navy transition-all";
+            }
+            runAstroEngine();
+        }
+
+        function runAstroEngine() {
+            const cloud = parseFloat(document.getElementById('cloudInput').value);
+            const temp = parseFloat(document.getElementById('tempInput').value);
+            const cropKey = document.getElementById('calcCrop').value;
+            const soilKey = document.getElementById('calcSoil').value;
+
+            document.getElementById('cloudVal').innerText = cloud + "%";
+            document.getElementById('tempVal').innerText = temp + " °C";
+
+            // Solar Flux I_toa & I_eff
+            const I_toa = 1368.4; // Top of atmosphere benchmark
+            const tau_atm = 0.75; // Baseline clear atmospheric transmissivity
+            const cloudFraction = cloud / 100.0;
+            const I_eff = I_toa * tau_atm * (1 - 0.75 * Math.pow(cloudFraction, 3));
+
+            // Crop Coefficients (Kc)
+            const kcTable = { 'tea': 1.00, 'avocado': 0.85, 'maize': 1.15, 'roses': 1.10 };
+            const kc = kcTable[cropKey] || 1.0;
+
+            // Hargreaves Reference ET calculation
+            const R_s_MJ = I_eff * 0.0864 / 1000;
+            const ETo = Math.max(1.2, 0.0023 * R_s_MJ * (temp + 17.8) * Math.sqrt(10));
+            const ETc = ETo * kc;
+
+            // Soil Factor
+            const soilFactors = { 'loam': 1.0, 'sandy': 1.15, 'clay': 0.85 };
+            const soilFactor = soilFactors[soilKey] || 1.0;
+
+            let netWaterLiters = ETc * soilFactor * 0.88;
+            if (currentMode === 'DROUGHT') {
+                netWaterLiters *= 0.60; // 40% survival deficit
+            }
+
+            // Pouring Duration in Seconds (20L Bucket)
+            // Pour rate: approx 0.33 Liters / second
+            const bucketSeconds = Math.round(netWaterLiters * 3.3);
+
+            // Solenoid Relay Time
+            const relayTimeMinutes = (netWaterLiters / 4.0) * 60;
+            const rMin = Math.floor(relayTimeMinutes);
+            const rSec = Math.round((relayTimeMinutes - rMin) * 60);
+
+            // Update UI Output Cards
+            document.getElementById('outIeff').innerText = I_eff.toFixed(1) + " W/m²";
+            document.getElementById('outETc').innerText = ETc.toFixed(2) + " mm/day";
+            document.getElementById('outKcSub').innerText = "Kc Factor = " + kc.toFixed(2) + " (" + cropKey.toUpperCase() + ")";
+            document.getElementById('outWaterVolume').innerText = netWaterLiters.toFixed(1) + " Liters / plant / day";
+            document.getElementById('outBucketTime').innerText = bucketSeconds + " seconds / plant";
+            document.getElementById('outRelayTime').innerText = rMin + " mins " + rSec + " secs";
+            document.getElementById('liveHeroSolar').innerText = "Solar Irradiance: " + Math.round(I_eff) + " W/m²";
+
+            // Update Carbon Credit
+            const carbonKg = (netWaterLiters * 35.4).toFixed(1);
+            document.getElementById('finCarbonValue').innerText = carbonKg + " kg CO₂/acre";
+        }
+
+        let ussdState = 'IDLE';
+        let ussdBuffer = '';
+
+        function pressPhoneKey(key) {
+            const screen = document.getElementById('ussdScreenText');
+
+            if (key === 'CALL') {
+                ussdState = 'MAIN_MENU';
+                ussdBuffer = '';
+                screen.innerText = currentLang === 'sw' ? 
+                    "CON Jambo! e-Panda Solar (*384*#)\n1. Maji Yanayohitajika\n2. Badili Hali (Growth/Drought)\n3. Salio la Carbon Credit\n4. Hali ya Bima ya Ukame" :
+                    "CON Welcome to e-Panda (*384*#)\n1. Water Requirement Today\n2. Change Mode (Growth/Drought)\n3. Carbon Credit Balance\n4. Drought Insurance Status";
+                return;
+            }
+
+            if (key === 'END' || key === 'CLEAR') {
+                ussdState = 'IDLE';
+                ussdBuffer = '';
+                screen.innerText = "Safaricom 4G\nNetwork Ready.\nDial *384*#";
+                return;
+            }
+
+            if (ussdState === 'MAIN_MENU') {
+                if (key === '1') {
+                    ussdState = 'RESULT';
+                    const waterText = document.getElementById('outWaterVolume').innerText;
+                    const bucketText = document.getElementById('outBucketTime').innerText;
+                    screen.innerText = "END e-Panda Water Report:\nWater: " + waterText + "\nBucket Pour: " + bucketText + "\nStatus: Optimal";
+                } else if (key === '2') {
+                    ussdState = 'MODE_SELECT';
+                    screen.innerText = "CON Select Mode:\n1. Growth Mode (100%)\n2. Drought Mode (60% Deficit)";
+                } else if (key === '3') {
+                    ussdState = 'RESULT';
+                    const carbonText = document.getElementById('finCarbonValue').innerText;
+                    screen.innerText = "END Carbon Credit Balance:\nCO2: " + carbonText + "\nEst. Value: KES 2,140\nVerified by IAAC Engine";
+                } else if (key === '4') {
+                    ussdState = 'RESULT';
+                    screen.innerText = "END Drought Insurance:\nStatus: NORMAL\nSolar Stress Index: 2/10\nNo Payout Triggered";
+                }
+            } else if (ussdState === 'MODE_SELECT') {
+                if (key === '1') {
+                    setMode('GROWTH');
+                    ussdState = 'RESULT';
+                    screen.innerText = "END Mode updated to GROWTH.\n100% NIR active.";
+                } else if (key === '2') {
+                    setMode('DROUGHT');
+                    ussdState = 'RESULT';
+                    screen.innerText = "END Mode updated to DROUGHT.\n40% water saved.";
+                }
+            }
+        }
+
+        function handleRegistration(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('regName').value;
+            const phone = document.getElementById('regPhone').value;
+            const county = document.getElementById('regCounty').value;
+            const crop = document.getElementById('regCrop').value;
+
+            const modal = document.getElementById('registrationModal');
+            const title = document.getElementById('modalTitle');
+            const text = document.getElementById('modalText');
+            const token = document.getElementById('modalToken');
+
+            if (currentLang === 'sw') {
+                title.innerText = "Hongera " + name + "! Usajili Umekamilika.";
+                text.innerText = "Ujumbe wa M-PESA na SMS umetumwa kwa namba +254 " + phone + ". Mfumo wa e-Panda umeanza kufuatilia shamba lako la " + crop + " katika Kaunti ya " + county + ".";
+            } else {
+                title.innerText = "Congratulations " + name + "! Registration Complete.";
+                text.innerText = "M-PESA & SMS verification sent to +254 " + phone + ". e-Panda is now actively monitoring your " + crop + " farm in " + county + " County.";
+            }
+
+            const randCode = Math.floor(1000 + Math.random() * 9000);
+            token.innerText = "Ref Token: #EP-2026-" + county.toUpperCase().replace(/\s+/g, '') + "-" + randCode;
+
+            modal.classList.remove('hidden');
+            modal.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize calculations on window load
+        window.onload = function() {
+            runAstroEngine();
+        };
+    </script>
+</body>
+</html>
